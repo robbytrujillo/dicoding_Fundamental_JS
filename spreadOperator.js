@@ -1,4 +1,4 @@
-// Spread Operator
+// Spread Operator 22022023
 const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
 const others = ["Cake", "Pie", "Donut"];
 
@@ -29,10 +29,10 @@ console.log(allFaforites1);
 [ 'Seafood', 'Salad', 'Nugget', 'Soup', 'Cake', 'Pie', 'Donut' ]
 */
 
-const obj1 = {firstname: 'Obi-Wan', age: 30};
-const obj2 = {lastname: 'Kenobi', gender: 'M'};
+const obj1 = { firstname: "Obi-Wan", age: 30 };
+const obj2 = { lastname: "Kenobi", gender: "M" };
 
-newObj = {...obj1, ...obj2};
+newObj = { ...obj1, ...obj2 };
 
 console.log(newObj);
 /* output
