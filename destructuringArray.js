@@ -68,4 +68,45 @@ Nilai a: 2
 Nilai b: 1
 */
 
-// algoritma manual menggunakan array destructuring assignment
+// algoritma manual seperti di atas menggunakan array destructuring assignment
+[a, b] = [b, a]; // menetapkan nilai a dengan nilai b dan nilai b dengan nilai a.
+
+console.log("Setelah swap");
+console.log("Nilai a: " + a);
+console.log("Nilai b: " + b);
+
+/* output
+Sebelum swap
+Nilai a: 1
+Nilai b: 2
+Setelah swap
+Nilai a: 2
+Nilai b: 1
+*/
+
+// Devaults Values yang bernilai undefined
+
+const favorites4 = ["Seafood"];
+const [myFood4, herFood4] = favorites4;
+
+console.log(myFood);
+console.log(herFood);
+
+/* output:
+Seafood
+undefined
+*/
+
+// destructuring array diberikan nilai default pada variabel yang tidak dijangkau array
+const favorites5 = ["Seafood"];
+
+const [myFood6, herFood6 = "Salad"] = favorites6;
+
+console.log(myFood);
+console.log(herFood);
+
+/* output:
+Seafood
+Salad
+*/
+
