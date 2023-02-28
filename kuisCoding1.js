@@ -23,21 +23,17 @@
  *    Kemudian isi dengan nilai "favorite drink" dari properti object restaurant
  */
 
-
 // TODO
-const restaurant = {
-    name: "Robby",
-    city: "Bogor",
-    favoriteDrink: "Coffe",
-    favoriteFood: "Beef Steak",
-    isVegan: false,
+let restaurant = {
+  name: "Starbucks",
+  city: "Bandung",
+  "favorite drink": "Coffe",
+  "favorite food": "Pie",
+  isVegan: false,
 };
 
-console.log("Nama Saya ${restaurant.name}");
-console.log("Saya Berasal Dari ${restaurant.city}");
-console.log("saya suka minuman ${restaurant.favoriteDrink}");
-console.log("saya suka makanan ${restaurant.favoriteFood}");
-console.log("Dan saya bukan seorang ${restaurant.isVegan}")
+let name = restaurant.name;
+let favoriteDrink = restaurant["favorite drink"];
 /**
  * Jangan hapus kode di bawah ini
  */
