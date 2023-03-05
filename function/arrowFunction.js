@@ -20,3 +20,10 @@ const sayHello = (greet) => {
 const sayName1 = (name1) => {
     console.log(`Nama saya ${name1}`)
 }
+
+sayName1("Asep");
+
+/* output
+Nama saya Asep
+ */
+
