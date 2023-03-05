@@ -27,3 +27,33 @@ sayName1("Asep");
 Nama saya Asep
  */
 
+const sayHello1 = () => {
+    console.log("Selamat pagi !")
+}
+
+sayHello1;
+
+/* output
+Selamat pagi !
+ */
+
+const sayName2 = name2 => console.log(`Nama saya ${name2}`);
+sayName2("Robby");
+
+const sayHello2 = () => console.log("Selamat Pagi !");
+sayHello2();
+
+/* output
+Nama saya Robby
+Selamat Pagi !
+ */
+
+const multiply = (a, b) => a * b;
+console.log(multiply(3, 4));
+
+/* output
+12
+ */
+
+
+
