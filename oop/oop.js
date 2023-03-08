@@ -15,5 +15,16 @@ const car = {
     reverse: () => {
         console.log('reversing');
     },
-    
+    turn: () => {
+        console.log('turning');
+    }
+
 }
+
+console.log(car.brand); // Ford
+console.log(car.color); // red
+console.log(car.maxSpeed); // 200
+console.log(car.chassisNumber); // f-1
+car.drive(); // driving
+car.reverse(); // reversing
+car.turn(); // turning
