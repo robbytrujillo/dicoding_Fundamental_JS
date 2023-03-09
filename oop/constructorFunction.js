@@ -94,3 +94,10 @@ Toyota Silver is driving
 Honda Black is driving
 Suzuki Red is driving
 */
+
+class Car {};
+console.log(typeof Car);
+
+/* Output
+function
+*/
