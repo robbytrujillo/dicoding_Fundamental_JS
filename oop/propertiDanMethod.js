@@ -179,3 +179,29 @@ class Car4 {
     console.log(`${this.brand} ${this.color} is turning ${direction}`);
   }
 }
+
+class Mail {
+    constructor(sender, receiver, subject, body) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.subject = subject;
+        this.body = body;
+    }
+
+    // Methods
+    send() {
+        console.log(`Sending mail from ${this.sender} to ${this.reciver}`);
+    }
+
+    sendLater(delay) {
+        console.log(`Sending after $(delay) ms`);
+
+        setTimeout(() => {
+            this.send();
+        }, delay);
+    }
+
+    saveAsDraft() {
+        console.log('Saving mail as draft');
+    }
+}
