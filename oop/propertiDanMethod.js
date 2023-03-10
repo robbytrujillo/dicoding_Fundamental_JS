@@ -178,6 +178,10 @@ class Car4 {
   turn(direction) {
     console.log(`${this.brand} ${this.color} is turning ${direction}`);
   }
+
+  _generateChassisNumber() {
+    return `${this.brand}-${Math.floor(Math.random() * 1000)}`;
+  }
 }
 
 class Mail {
@@ -205,3 +209,77 @@ class Mail {
         console.log('Saving mail as draft');
     }
 }
+
+const car9 = new Car('BMW', 'red', 200);
+
+car1.drive();
+car1.turn('left');
+car1.reverse();
+
+/* Output:
+BMW red is driving
+BMW red is turning left
+BMW red is reversing
+*/
+
+const car10 = new Car10('BMW', 'red', 200);
+
+console.log(car._chassisNumber3);
+car._chassisNumber3 = 'BMW-1';
+console.log(car._chassisNumber3);
+
+/* Output:
+BMW-85
+BMW-1
+BMW-667
+*/
+
+class Car5 {
+    #chassisNumber = null;
+
+    constructor(brand4, color4, maxSpeed4) {
+        this.brand5 = brand5;
+        this.color5 = color5;
+        this.maxSpeed5 = maxSpeed5;
+        this.#chassisNumber = this.#generateChassisNumber();
+    }
+
+    get chassisNumber4() {
+        return this.#chassisNumber;
+    }
+
+    set chassisNumber(chassisNumber) {
+        console.log('you are not allowed to change the chassis number');
+      }
+     
+      // Methods
+      drive() {
+        console.log(`${this.brand} ${this.color} is driving`);
+      }
+     
+      reverse() {
+        console.log(`${this.brand} ${this.color} is reversing`);
+      }
+     
+      turn(direction) {
+        console.log(`${this.brand} ${this.color} is turning ${direction}`);
+      }
+     
+      #generateChassisNumber() {
+        return `${this.brand}-${Math.floor(Math.random() * 1000)}`;
+      }
+    }
+    //Khusus untuk properti yang sifatnya private, Anda harus mendeklarasikan propertinya di enclosing class seperti ini.
+    
+    class Car {
+      #chassisNumber = null; // enclosing class
+     
+      constructor(brand, color, maxSpeed) {
+        this.brand = brand;
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+        this.#chassisNumber = this.#generateChassisNumber();
+      }
+     
+     // ... kode lainnya.
+    }
