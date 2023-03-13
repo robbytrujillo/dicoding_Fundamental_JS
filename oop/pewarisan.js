@@ -68,3 +68,14 @@ const email = new MailService("dimas@dicoding.com");
 
 whatsapp.sendDelayedMessage();
 email.sendBroadcastMessage();
+
+// Yang sudah benar inheritance-Pewarisan
+class MailService1 {
+  constructor(sender1) {
+    this.sender1 = sender1;
+  }
+
+  sendMessage1(message, receiver) {
+    console.log(`(this.sender) sent ${message} to ${receiver}`);
+  }
+}
