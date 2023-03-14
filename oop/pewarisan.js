@@ -128,7 +128,7 @@ function MailService3(sender3) {
 
 MailService3.prototype.sendMessage3 = function (message3, receiver3) {
   console.log(`${this.sender3} sent ${message3} to ${receiver3}`);
-}
+};
 
 function WhatsAppService3(sender3) {
   MailService.call(this, sender3);
@@ -142,4 +142,24 @@ WhatsAppService3.prototype.sendBroadcastMessage3 = function (message3, receivers
   for (const receiver3 of receivers) {
     this.sendMessage(message3, receiver3);
   }
-}
+};
+
+// Operator instanceof
+
+// operand1 instanceof operand2
+
+const whatsapp1 = new WhatsAppService1("+6281234567890");
+
+console.log(whatsapp1 instanceof WhatsAppService1); // true
+console.log(whatsapp1 instanceof EmailService1); // false
+
+const whatsapp3 = new WhatsAppService3("+6281234567890");
+const email3 = new EmailService3("robby@dicoding.com");
+
+console.log(whatsapp3 instanceof WhatsAppService3); // true
+console.log(whatsapp3 instanceof EmailService3); // false
+console.log(whatsapp3 instanceof MailService3); // true
+
+console.log(email3 instanceof EMailService3); // true
+console.log(email3 instanceof WhatsAppService3); // false
+console.log(email3 instanceof MailService3); // true
