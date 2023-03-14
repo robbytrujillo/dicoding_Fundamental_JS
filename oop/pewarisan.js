@@ -110,15 +110,36 @@ class EmailService2 extends MailService2 {
   }
 }
 
-const whatsapp2 = new WhatsAppService2('+6281234567890');
-const email2 = new EmailService2('robby@dicoding.com');
+const whatsapp2 = new WhatsAppService2("+6281234567890");
+const email2 = new EmailService2("robby@dicoding.com");
 
-whatsapp2.sendMessage2('Hello', '+6280987654321');
-whatsapp2.sendBroadcastMessage2('Hello', '+6280987654321');
+whatsapp2.sendMessage2("Hello", "+6280987654321");
+whatsapp2.sendBroadcastMessage2("Hello", "+6280987654321");
 whatsapp2.sendDelayedMessage2(); // error
 
-email2.sendMessage2('Hello', 'math@iew.com');
-email2.sendDelayedMessage2('Hello', 'math@iew.com');
+email2.sendMessage2("Hello", "math@iew.com");
+email2.sendDelayedMessage2("Hello", "math@iew.com", 3000);
 email2.sendBroadcastMessage2(); // error
 
+// Pewarisan tanpa ES6 Class
+function MailService3(sender3) {
+  this.sender = sender;
+}
 
+MailService3.prototype.sendMessage3 = function (message3, receiver3) {
+  console.log(`${this.sender3} sent ${message3} to ${receiver3}`);
+}
+
+function WhatsAppService3(sender3) {
+  MailService.call(this, sender3);
+}
+
+// Prototype inheritance
+WhatsAppService3.prototype = Object.create(MailService3.prototype);
+WhatsAppService3.prototype.constructor = WhatAppService3;
+
+WhatsAppService3.prototype.sendBroadcastMessage3 = function (message3, receivers) {
+  for (const receiver3 of receivers) {
+    this.sendMessage(message3, receiver3);
+  }
+}
