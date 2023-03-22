@@ -55,3 +55,32 @@ console.log(eligibleForScholarshipStudents);
 
 // Array Reduce
 //-------------
+arr.reduce(callback(accumulator, currentValue, [currentIndex], [array]), [initialValue])
+
+// [...] adalah opsional parameter
+
+const students1 = [
+    {
+        name: 'Harry',
+        score: 60.
+    },
+    {
+        name: 'James',
+        score: 88,
+    },
+    {
+        name: 'Bethy',
+        score: 75,
+    }
+];
+
+const totalScore = students1.reduce((acc, student) => acc + student.score, 0);
+
+console.log(totalScore);
+
+/**
+ * output:
+ * 313
+ * 
+ */
+
