@@ -84,3 +84,73 @@ console.log(totalScore);
  * 
  */
 
+// Array some
+//-----------
+arr.some(callback(element, [index], [array]), [thisArg])
+// [...] adalah opsional parameter
+
+const array = [1, 2, 3, 4, 5];
+const even = array.some(element => element % 2 === 0);
+
+console.log(even);
+
+/** 
+output true
+**/
+
+// Array find
+//-----------
+arr.find(callback(element, [index], [array]), [thisArg]);
+
+const students2 = [{
+  name: 'Harry',
+  score: 60,
+},
+{
+  name: 'James',
+  score: 88,
+},
+{
+  name: 'Bethy',
+  score: 75,
+}
+];
+
+const findJames = students2.find(student => student.name === 'James');
+console.log(findJames);
+
+/**
+output
+{ name: 'James', score: 88 }
+**/
+
+// Array Sort
+//-----------
+arr.sort([compareFunction])
+// [...] adalah opsional parameter
+
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months);
+// output: [ 'Dec', 'Feb', 'Jan', 'March' ]
+
+const array1 = [1, 30, 4, 1000, 101, 121];
+array1.sort();
+console.log(array1);
+// output: [ 1, 1000, 101, 121, 30, 4 ]
+
+const array2 = [1, 30, 4, 1000];
+
+const compareNumber = (a, b) => {
+  return a - b;
+};
+
+const sorting = array2.sort(compareNumber);
+console.log(sorting);
+
+/**
+output
+[ 1, 4, 30, 1000 ]
+**/
+
+
