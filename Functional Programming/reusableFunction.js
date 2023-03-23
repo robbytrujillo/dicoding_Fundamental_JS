@@ -153,4 +153,54 @@ output
 [ 1, 4, 30, 1000 ]
 **/
 
+// Array every
+//------------
 
+arr.every(callback(element, [index], [array]))
+
+const scores = [70, 85, 90];
+const minimumScore = 65;
+
+const examPassed = scores.every(score => score >= minimumScore);
+console.log(examPassed);
+
+/**
+output
+true
+**/
+
+// Array forEach 
+//--------------
+
+const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+
+// Cara imperatif
+//---------------
+for(let i = 0; i< names.length; i++) {
+  console.log(`Hello, ${names[i]}!`);
+}
+
+/**
+ * output:
+ * Hello, Harry!
+ * Hello, Ron!
+ * Hello, Jeff!
+ * Hello, Thomas!
+ * 
+ */
+
+// Cara deklaratif
+//----------------
+
+names.forEach((name) => {
+  console.log(`Hello, ${name}!`);
+});
+
+/**
+ * output:
+ * Hello, Harry!
+ * Hello, Ron!
+ * Hello, Jeff!
+ * Hello, Thomas!
+ * 
+ */
