@@ -27,3 +27,24 @@ Module {
     '/node_modules'
     ]
 }
+
+// perintah node state.js
+//-----------------------
+
+// index.js
+const coffeeStock1 = require('./state');
+
+console.log(coffeeStock1);
+
+/* output
+{ arabica: 100, robusta: 150, liberica: 200 }
+*/
+
+// state.js
+const coffeeStock1 = {
+    arabica: 100,
+    robusta: 150,
+    liberica: 200
+};
+
+module.export = coffeeStock1;
