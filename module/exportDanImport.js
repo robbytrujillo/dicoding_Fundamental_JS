@@ -40,11 +40,6 @@ console.log(coffeeStock1);
 { arabica: 100, robusta: 150, liberica: 200 }
 */
 
-// state.js
-const coffeeStock1 = {
-    arabica: 100,
-    robusta: 150,
-    liberica: 200
-};
+const coffeeStock2 = require('./state');
 
-module.export = coffeeStock1;
+const
