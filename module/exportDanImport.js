@@ -51,3 +51,8 @@ const makeCoffe2 = (type, miligrams) => {
 }
 
 makeCoffe2("robusta", 80);
+
+/* output
+Kopi berhasil dibuat!
+*/
+
