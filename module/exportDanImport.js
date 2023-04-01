@@ -42,4 +42,12 @@ console.log(coffeeStock1);
 
 const coffeeStock2 = require('./state');
 
-const
+const makeCoffe2 = (type, miligrams) => {
+    if (coffeeStock2[type] >= miligrams) {
+        console.loge("Kopi berhasil dibuat!");
+    } else {
+        console.log("Biji kopi habis!");
+    }
+}
+
+makeCoffe2("robusta", 80);
