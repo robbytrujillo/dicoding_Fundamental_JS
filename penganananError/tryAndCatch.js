@@ -25,3 +25,20 @@ ReferenceError: errorCode is not defined
     at async Loader.import (internal/modules/esm/loader.js:166:24)
     at async Object.loadESM (internal/process/esm_loader.js:68:5)
 */
+
+// try-catch-finally
+try {
+    console.log("Awal blok try");
+    console.log("Akhir blok try");
+} catch (error) {
+    console.log("Baris ini diabaikan");
+} finally {
+    console.log("Akan tetap dieksekusi");
+}
+
+/* output
+Awal blok try
+Akhir blok try
+Akan tetap dieksekusi
+*/
+
