@@ -45,7 +45,7 @@ try {
     console.log(error.message);
 }
 
-// mengatasi error menggunakan throw
+// mengatasi error menggunakan throw 
 const json3 = '{ "age": 20 }';
 try {
     const user = JSON.parse(json);
@@ -90,7 +90,7 @@ JSON Error: errorCode is not defined
 try {
     // ....
 } catch (error) {
-    (error instanceof SyntaxError) {
+    if (error instanceof SyntaxError) {
         console.log(`JSON Error: ${error.message}`);
     } else if (error instanceof ReferenceError) {
         console.log(error.message);
