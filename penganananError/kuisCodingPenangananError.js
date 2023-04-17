@@ -8,15 +8,15 @@ class ValidationError extends Error {
 
 // TODO 2
 const validateNumverInput = (a, b, c) => {
-    if (tupeof a !== "number") {
+    if (typeof a !== "number") {
         throw new ValidationError("Argumen pertama harus number");
     }
 
-    if (tupeof b !== "number") {
+    if (typeof b !== "number") {
         throw new ValidationError("Argumen kedua harus number");
     }
 
-    if (tupeof c !== "number") {
+    if (typeof c !== "number") {
         throw new ValidationError("Argumen ketiga harus number");
     }
 };
