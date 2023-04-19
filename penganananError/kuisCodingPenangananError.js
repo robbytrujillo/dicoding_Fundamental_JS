@@ -38,4 +38,5 @@ const detectTriangle = (a, b, c) => {
   }
 
   return "Sigitiga sembarang";
+  // ysz
 };
