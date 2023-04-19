@@ -12,3 +12,7 @@ try {
 } catch (e) {
     console.log(e.message);
 }
+
+// Kita dapat membuat kelas error sendiri dengan melakukan pewarisan pada kelas Error
+
+// Manakah keyword berikut ini yang digunakan untuk membuat error secara manual? throw
