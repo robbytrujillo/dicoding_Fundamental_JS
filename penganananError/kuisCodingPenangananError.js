@@ -7,7 +7,7 @@ class ValidationError extends Error {
 }
 
 // TODO 2
-const validateNumverInput = (a, b, c) => {
+function validateNumverInput (a, b, c) {
   if (typeof a !== "number") {
     throw new ValidationError("Argumen pertama harus number");
   }
@@ -22,11 +22,15 @@ const validateNumverInput = (a, b, c) => {
 };
 
 // TODO 3
-const detectTriangle = (a, b, c) => {
+function detectTriangle (a, b, c) {
   try {
     validateNumberInput(a, b, c);
   } catch (error) {
     return error.message;
+  }
+
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return "Nilai argumen tidak boleh negatif atau 0";
   }
 
   if (a === b && b === c) {
