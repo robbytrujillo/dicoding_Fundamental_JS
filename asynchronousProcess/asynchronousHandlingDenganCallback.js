@@ -1,5 +1,6 @@
 // Asynchronous Handling dengan Callback
 
+// Pola Callback
 function getUsers(callback) {
     // simulate network delay
     setTimeout(() => {
@@ -11,3 +12,9 @@ function getUsers(callback) {
 getUsers((users) => {
     console.log(users);
 });
+
+function userCallback(users) {
+    console.log(users);
+}
+
+getUsers(usersCallback);
