@@ -33,3 +33,20 @@ function getUsers1(isOffline1, callback1) {
     }, 3000);
 
     }
+
+    function callback1(error, data) {
+        // logika ketika proses asynchronous selesai
+    }
+
+    function usersCallback1(error1, data1) {
+        if (error1) {
+            console.log('process failed:', error1.message);
+            return;
+        }
+
+        console.log('process success:', users);
+    }
+
+getUsers1(false, usersCallback1); // process success: ['John', 'Jack', 'Abigail']
+getUsers1(true, usersCallback1); // process failed: cannot retrieve users due offline
+
