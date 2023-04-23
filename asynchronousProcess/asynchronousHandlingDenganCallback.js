@@ -48,5 +48,30 @@ function getUsers1(isOffline1, callback1) {
     }
 
 getUsers1(false, usersCallback1); // process success: ['John', 'Jack', 'Abigail']
-getUsers1(true, usersCallback1); // process failed: cannot retrieve users due offline
+getUsers1(true, usersCallback1);  // process failed: cannot retrieve users due offline
+
+// index.js
+//----------
+const { getProvinces } = require('./utils');
+
+// @TODO: call getProvinces() twices and log the result
+
+// solution.js
+//-------------
+const { getProvinces } = require('./utils');
+
+// solution
+function provincesCallback(error, provinces) {
+    if (error) {
+        console.log(error.message);
+        return;
+    }
+
+    console.log(provinces);
+}
+
+getProvinces(provincesCallback);
+getProvinces(provincesCallback);
+
+
 
