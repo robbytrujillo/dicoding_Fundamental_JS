@@ -1,6 +1,12 @@
 // Asynchronous Handling dengan Promise
 //--------------------------------------
 
+// Promise di JavaScript pun memiliki konsep yang sama karena memiliki beberapa kondisi, yaitu pending, fulfilled, dan rejected.
+
+// Pending merupakan keadaan Promise sedang berjalan.
+// Fulfilled merupakan keadaan Promise yang terpenuhi.
+// Rejected merupakan keadaan Promise yang gagal terpenuhi.
+
 // fungsi getUser()
 function getUsers(isOffline, callback) {
   // simulate network delay
