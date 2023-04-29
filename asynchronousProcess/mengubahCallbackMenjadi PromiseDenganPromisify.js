@@ -13,6 +13,12 @@ function getUsers(isOffline, callback) {
 
         if (isOffline) {
             callback(new Error('cannot retrieve users due offline'), null);
+            return;
         }
-    })
+
+        callback(null, users);
+    }, 3000);
 }
+
+// create a Promise version of getUsers
+const getUsersPromise = promisify(getUsers);
