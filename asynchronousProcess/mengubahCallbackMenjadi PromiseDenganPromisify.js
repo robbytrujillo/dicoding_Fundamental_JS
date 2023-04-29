@@ -22,3 +22,13 @@ function getUsers(isOffline, callback) {
 
 // create a Promise version of getUsers
 const getUsersPromise = promisify(getUsers);
+
+// menerapkan promise tanpa perlu mengubah secara manual
+getUsersPromise(false)
+    .then(users => console.log(users)) // ['John', 'Jack', 'Abigail']
+    .then(err => console.log(err.message));
+
+getUsersPromise(true)
+    .then(users => console.log(users)) 
+    .then(err => console.log(err.message)); // cannot retrieve users due offline
+
