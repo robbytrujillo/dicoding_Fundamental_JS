@@ -20,13 +20,23 @@ Promise.all([promise4, promise5, promise6])
 .then((values) => console.log(values))
 .catch((error) => console.log(error)); // ups
 
-
+// Promise.race() hanya mengembalikan nilai Promise yang prosesnya paling cepat
 const promise7 = new Promise((resolve) => setTimeout(() => resolve(7), 1000));
 const promise8 = new Promise((resolve) => setTimeout(() => resolve(8), 2000));
 const promise9 = new Promise((resolve) => setTimeout(() => resolve(9), 3000));
 
 Promise.race([promise7, promise8, promise9])
 .then((value) => console.log(value)); // 1 setelah 1 detik
+
+const promise10 = new Promise((resolve, reject) => setTimeout(() => reject(new Error('ups')), 1000));
+const promise11 = new Promise((resolve) => setTimeout(() => resolve(11), 2000));
+const promise12 = new Promise((resolve) => setTimeout(() => resolve(12), 3000));
+
+Promise.race([promise10, promise11, promise12])
+.then((value) => console.log(value))
+.catch((error) => console.log(error.message)); // Ups
+
+
 
 
 
