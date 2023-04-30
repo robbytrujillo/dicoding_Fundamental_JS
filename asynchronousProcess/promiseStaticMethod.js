@@ -1,7 +1,7 @@
 // Promise Static Method
 //-----------------------
 
-// contoh promise.all()
+// 1. contoh promise.all()
 // main.js
 //---------
 const promise1 = new Promise((resolve) => setTimeout(() => resolve(1), 1000));
@@ -20,7 +20,7 @@ Promise.all([promise4, promise5, promise6])
 .then((values) => console.log(values))
 .catch((error) => console.log(error)); // ups
 
-// Promise.race() hanya mengembalikan nilai Promise yang prosesnya paling cepat
+// 2. Promise.race() hanya mengembalikan nilai Promise yang prosesnya paling cepat
 const promise7 = new Promise((resolve) => setTimeout(() => resolve(7), 1000));
 const promise8 = new Promise((resolve) => setTimeout(() => resolve(8), 2000));
 const promise9 = new Promise((resolve) => setTimeout(() => resolve(9), 3000));
@@ -44,6 +44,7 @@ Promise.race([promise10, promise11, promise12])
 }
 */
 
+// 3. Promise.allSettled()
 const promise13 = new Promise((resolve) => setTimeout(() => resolve(13), 1000));
 const promise14 = new Promise((resolve, rejected) => setTimeout(() => reject (new Error("Error")), 2000));
 const promise15 = new Promise((resolve) => setTimeout(() => resolve(15), 1000));
@@ -52,6 +53,21 @@ Promise.allSettled([promise13, promise14, promise15])
 .then((results) => console.log(results));
 // [{status: "fulfilled", value: 13}, {status: "rejected",reason: Error}, {status: "fulfilled", value: 15}] setelah 3 detik
 
+// 4. Promise.any()
+// fulfilled sample
+const promiseResolve1 = new Promise((resolve, reject) => setTimeout(() => resolve("1"), 1000));
+const promiseResolve2 = new Promise((resolve, reject) => setTimeout(() => resolve("2"), 1000));
+const promiseResolve3 = new Promise((resolve, reject) => setTimeout(() => resolve("3"), 1000));
 
+Promise.any([promiseResolve1, promiseResolve2, promiseResolve3])
+.then((value) => console.log(value)) // 1
+.catch((error) => console.log(error.message));
 
+// rejected sample
+const promiseReject1 = new Promise((resolve, reject) => setTimeout(() => reject(new Error('1')), 1000));
+const promiseReject2 = new Promise((resolve, reject) => setTimeout(() => reject(new Error('2')), 2000));
+const promiseReject3 = new Promise((resolve, reject) => setTimeout(() => reject(new Error('3')), 3000));
 
+Promise.any([promiseReject1, promiseReject2, promiseReject3])
+.then((value) => console.log(value))
+.catch((error) => console.log(error.message)); // All Promise were rejected
