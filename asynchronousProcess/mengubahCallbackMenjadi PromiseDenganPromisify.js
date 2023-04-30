@@ -32,3 +32,22 @@ getUsersPromise(true)
     .then(users => console.log(users)) 
     .then(err => console.log(err.message)); // cannot retrieve users due offline
 
+// fungsi fs.readFile()
+//----------------------
+
+// index.js
+//----------
+
+const fs = require('fs');
+const { promisify } = require('util');
+
+const readFilePromise = promisify(fs.readFile);
+
+readFilePromise('./data.txt', 'utf8')
+    .then(data => console.log(data))
+    .catch(err => console.log(err.message));
+
+// data.txt
+//----------
+
+//  Anda berhasil membaca teks dari berkas.
