@@ -36,7 +36,21 @@ Promise.race([promise10, promise11, promise12])
 .then((value) => console.log(value))
 .catch((error) => console.log(error.message)); // Ups
 
+/** 
+{
+    status: 'fulfilled' | 'rejected',
+    value: 'value of the Promise',
+    reason: 'error of the Promise',
+}
+*/
 
+const promise13 = new Promise((resolve) => setTimeout(() => resolve(13), 1000));
+const promise14 = new Promise((resolve, rejected) => setTimeout(() => reject (new Error("Error")), 2000));
+const promise15 = new Promise((resolve) => setTimeout(() => resolve(15), 1000));
+
+Promise.allSettled([promise13, promise14, promise15])
+.then((results) => console.log(results));
+// [{status: "fulfilled", value: 13}, {status: "rejected",reason: Error}, {status: "fulfilled", value: 15}] setelah 3 detik
 
 
 
