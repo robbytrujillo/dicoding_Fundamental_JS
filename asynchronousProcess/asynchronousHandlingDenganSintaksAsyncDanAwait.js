@@ -60,7 +60,7 @@ watchMovie(5)
 function withDrawMoney(amount) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            (amount > 100) {
+            if (amount > 100) {
                 reject(new Error('Not enough money to withdraw'))
             }
 
