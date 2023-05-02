@@ -22,7 +22,10 @@ async function watchMovie() {
         console.log(error.message);
     }
     }
-watchMovie();
+watchMovie().then(() => console.log('done'));
 
+/** output */
+// enjoy the movie
+// done
 
 
