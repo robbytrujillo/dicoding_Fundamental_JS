@@ -119,3 +119,23 @@ getUsersPromise(false)
 getUsersPromise(true)
 .then(users => console.log(users))
 .catch(err => console.log(err.message)); // cannot retrieve users due offline
+
+/*
+Namun, terdapat beberapa catatan ketika Anda hendak mengubah fungsi asynchronous callback-based menjadi Promise-based menggunakan util.promisify().
+
+Promisify selalu menganggap callback berada pada argumen paling akhir sebuah fungsi asynchronous. Dengan begitu, Anda tidak dapat menggunakan promisify jika callback berada di posisi awal ataupun tengah argumen.
+Promisify akan bekerja dengan baik jika callback memiliki struktur argumen callback(error, data). Jika callback memiliki struktur argumen di luar aturan tersebut, nilai yang dibawa oleh Promise ketika fulfilled dan rejected bisa tertukar.
+*/
+
+//6. Promise Berantai
+function withDrawMoney(amount) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (amount > 100) {
+                reject(new Error('Not enough money to withdraw'))
+            }
+
+            resolve(amount)
+}, 1000);
+});
+}
