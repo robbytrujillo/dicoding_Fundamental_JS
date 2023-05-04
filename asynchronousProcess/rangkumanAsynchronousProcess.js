@@ -110,3 +110,12 @@ function getUsers(isOffline, callback) {
 
 // create a Promise version of getUsers
 const getUsersPromise = promisify(getUsers);
+
+// kita memiliki fungsi getUsers(), tetapi menerapkan Promise tanpa perlu mengubahnya secara manual.
+getUsersPromise(false)
+.then(users => console.log(users)) // ['John', 'Jack', 'Abigail']
+.catch(err => console.log(err.message));
+
+getUsersPromise(true)
+.then(users => console.log(users))
+.catch(err => console.log(err.message)); // cannot retrieve users due offline
