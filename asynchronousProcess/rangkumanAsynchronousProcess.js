@@ -139,3 +139,88 @@ function withDrawMoney(amount) {
 }, 1000);
 });
 }
+
+function buyCinemaTicket(money) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (money< 10) {
+                reject(new Error('not enough money to buy ticket'))
+            }
+
+            resolve('ticket-1')
+        }, 1000);
+});
+}
+
+function goInsideCinema(ticket) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (!ticket) {
+                reject(new Error('no ticket'))
+            }
+
+            resolve('enjoy the movie')
+    }, 1000);
+});
+}
+
+function watchMovie() {
+    withDrawMoney(10)
+    .then((money) => {
+        return buyCinemaTicket(money)
+    })
+    .then((ticket) => {
+        return goInsideCinema(ticket)
+    })
+    .then((result) => {
+        console.log(result) 
+    })
+    .catch((error) => {
+        console.log(error.message)
+    });
+}
+
+watchMovie();
+
+//7. Promise Static Method
+//7a. Promise.all 
+/*
+digunakan untuk mengeksekusi banyak Promise secara paralel. Method ini menerima sebuah array yang berisi beberapa Promise sebagai argumen. Fungsi ini akan mengembalikan sebuah Promise baru dan membawa nilai yang di-resolve dalam masing-masing Promise yang diletakkan pada array argumen. 
+*/
+
+//7b. Promise.race
+/*
+digunakan untuk mengeksekusi beberapa Promise secara paralel seperti Promise.all(), tetapi hanya mengembalikan nilai Promise yang paling cepat menyelesaikan eksekusinya.
+*/
+
+//7c. Promise.allSettled
+/*
+bekerja mirip seperti Promise.all(). Namun, Promise.allSettled() mengembalikan seluruh hasil dari Promise yang dieksekusi dalam bentuk array of object dengan format berikut.
+*/
+
+/*
+{
+    status: 'fulfilled' | 'rejected',
+    value: 'value of the Promise' | 'error of the Promise',
+}
+*/
+
+//7d. Promise.any
+/*
+Method Promise yang terakhir akan kami bahas adalah Promise.any(). Method ini bekerja mirip seperti Promise.race(), tetapi hanya mengembalikan nilai tercepat yang berstatus fulfilled. Jika seluruh Promise berstatus rejected, method ini akan mengembalikannya dengan pesan “All Promises were rejected”.
+*/
+
+//8. Asynchronous Handling dengan Async dan Await
+async function watchMovie() {
+    try {
+        const money = await withDrawMoney(10);
+        const ticket = await buyCinemaTicket(money);
+        const result = await goInsideCinema(ticket);
+
+        console.log(result);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+watchMovie();
