@@ -16,18 +16,21 @@
  * - Anda bisa mengeksplorasi fungsi yang sudah disediakan di utils.js. Namun, Anda tidak boleh mengubah isi dari utils.js.
  */
 
-const { buyTollRoadCard, topUpBalance, useTollRoad } = require("./utils");
+const { buyTollRoadCard, topUpBalance, useTollRoad } = require('./utils');
 
 async function getTollAccess() {
   try {
-    const card = await buyTollRoadCard(25);
-    console.log("Kartu tol berhasil dibeli:", card);
-    const updatedCard = await topUpBalance(card, 10);
-    console.log("Saldo berhasil diisi:", updatedCard);
-    await useTollRoad(updatedCard);
-    console.log("Berhasil masuk jalan tol!");
+  	const card = await buyTollRoadCard(25);
+    //console.log('card purchased', card);
+    
+    const cardWithBalance = await topUpBalance(card, 10);
+    //console.log('balance topped up', cardWithBalance);
+    
+    await useTollRoad(cardWithBalance);
+   // console.log('toll road used');
   } catch (error) {
     console.log(error.message);
+  // return;
   }
 }
 
